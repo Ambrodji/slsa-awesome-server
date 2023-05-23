@@ -23,3 +23,9 @@ jobs:
 
     - name: Build
       run: go build -a -v -trimpath='true' -buildvcs='true' -buildmode='exe' -o output/
+      
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: slsa-awesome-server
+        path: output/
